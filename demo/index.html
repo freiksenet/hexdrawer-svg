@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <style>
+      .hexdrawer-Hex {
+        fill: white;
+        stroke: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Hex demos
+    </h1>
+    <div id="svg">
+    </div>
+    <script src="../lodash.js"></script>
+    <script src="../react.js"></script>
+    <script src="../hexdrawer.js"></script>
+    <script>
+      var React = require('react');
+      var hexdrawer = require('./hexdrawer');
+
+      var element = document.getElementById('svg');
+
+      React.renderComponent(
+        React.DOM.svg(null,
+          hexdrawer.HexGrid({
+            x: 20,
+            y: 20,
+            height: 5,
+            width: 5,
+            radius: 20,
+            type: 'pointy'
+          }),
+          hexdrawer.HexGrid({
+            x: 220,
+            y: 20,
+            height: 5,
+            width: 5,
+            radius: 20,
+            type: 'pointy',
+            align: 'odd'
+          }),
+          hexdrawer.HexGrid({
+            x: 20,
+            y: 200,
+            height: 5,
+            width: 5,
+            radius: 20,
+            type: 'flat'
+          }),
+          hexdrawer.HexGrid({
+            x: 220,
+            y: 200,
+            height: 5,
+            width: 5,
+            radius: 20,
+            type: 'flat',
+            align: 'odd'
+          })
+        ), element);
+    </script>
+  </body>
+</html>

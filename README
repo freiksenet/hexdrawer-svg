@@ -1,0 +1,4 @@
+Library for drawing hex and square grids with SVG. Uses React, exposses both
+React components and React-free API.
+
+make demo, go to localhost:8000/demo/index.html

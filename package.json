@@ -1,0 +1,21 @@
+{
+  "name": "hexdrawer",
+  "version": "0.0.1",
+  "author": "Mikhail <freiksenet@gmail.com> Novikov",
+  "description": "renderer for hex or square tiles based on React",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freiksenet/hexdrawer.git"
+  },
+  "dependencies": {
+    "lodash": "2.4.x",
+    "react": "0.10.x",
+    "browserify": "3.41.x",
+    "reactify": "0.11.x",
+    "watchify": "0.7.0"
+  },
+  "devDependencies": {
+    "simple-server": "1.0.1"
+  },
+  "license": "MIT"
+}
