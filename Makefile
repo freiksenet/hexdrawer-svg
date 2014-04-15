@@ -36,7 +36,7 @@ dist: $(OUT)/hexdrawer.js
 
 .PHONY: dev
 dev:
-	$(watchify) -r hexdrawer -x lodash -x react -t reactify -e lib/hexdrawer.js -o $@
+	$(watchify) -r hexdrawer -x lodash -x react -t reactify -e lib/hexdrawer.js -o $(OUT)/hexdrawer.js
 
 .PHONY: clean-npm
 clean-npm:
