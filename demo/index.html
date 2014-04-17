@@ -3,7 +3,7 @@
     <style>
       svg {
         width: 800px;
-        height: 500px;
+        height: 800px;
       }
       .hexdrawer-Hex {
         fill: white;
@@ -33,34 +33,36 @@
             y: 20,
             height: 5,
             width: 5,
-            radius: 20,
-            type: 'pointy'
+            hexRadius: 20,
+            hexRotation: 0
           }),
           hexdrawer.HexGrid({
-            x: 220,
+            x: 300,
             y: 20,
             height: 5,
             width: 5,
-            radius: 20,
-            type: 'pointy',
-            align: 'odd'
+            align: 'odd',
+            hexRadius: 20,
+            hexRotation: Math.PI / 8
           }),
           hexdrawer.HexGrid({
             x: 20,
-            y: 200,
+            y: 300,
             height: 5,
             width: 5,
             radius: 20,
-            type: 'flat'
+            hexRadius: 20,
+            hexRotation: Math.PI / 5
           }),
           hexdrawer.HexGrid({
-            x: 220,
-            y: 200,
+            x: 300,
+            y: 300,
             height: 5,
             width: 5,
             radius: 20,
-            type: 'flat',
-            align: 'odd'
+            align: 'odd',
+            hexRadius: 20,
+            hexRotation: Math.PI / 6
           })
         ), element);
     </script>
