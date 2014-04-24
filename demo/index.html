@@ -8,6 +8,7 @@
       .hexdrawer-Hex {
         fill: white;
         stroke: black;
+        stroke-width: 2px;
       }
     </style>
   </head>
@@ -29,30 +30,29 @@
       React.renderComponent(
         React.DOM.svg(null,
           hexdrawer.HexGrid({
-            x: 20,
+            x: 40,
             y: 20,
             height: 5,
             width: 5,
-            hexRadius: 20,
+            hexWidth: 40,
             hexRotation: 0
           }),
           hexdrawer.HexGrid({
             x: 300,
-            y: 20,
+            y: 50,
             height: 5,
             width: 5,
-            align: 'odd',
-            hexRadius: 20,
+            hexWidth: 40,
+            hexRatio: 0.7,
             hexRotation: Math.PI / 8
           }),
           hexdrawer.HexGrid({
-            x: 20,
+            x: 40,
             y: 300,
             height: 5,
             width: 5,
-            radius: 20,
-            hexRadius: 20,
-            hexRotation: Math.PI / 5
+            hexWidth: 40,
+            hexRotation: - Math.PI / 32
           }),
           hexdrawer.HexGrid({
             x: 300,
@@ -60,9 +60,17 @@
             height: 5,
             width: 5,
             radius: 20,
-            align: 'odd',
-            hexRadius: 20,
+            hexWidth: 40,
             hexRotation: Math.PI / 6
+          }),
+          hexdrawer.HexGrid({
+            x: 600,
+            y: 20,
+            height: 5,
+            width: 5,
+            hexWidth: 40,
+            hexRatio: 0.5,
+            hexRotation: 0
           })
         ), element);
     </script>
