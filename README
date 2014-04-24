@@ -2,6 +2,6 @@ Library for drawing hex and square grids with SVG. Uses React, exposses both
 React components and React-free API.
 
 Demo:
-http://freiksenet.github.io/hexdrawer
+http://freiksenet.github.io/hexdrawer/demo
 
 make demo, go to localhost:8000/demo/index.html
