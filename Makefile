@@ -36,7 +36,7 @@ dist: $(OUT)/hexdrawer.js
 
 .PHONY: dev
 dev:
-	$(watchify) -r hexdrawer -x lodash -x react -t reactify -e lib/hexdrawer.js -o $(OUT)/hexdrawer.js
+	$(watchify) -r ./hexdrawer -x lodash -x react -t reactify -e hexdrawer.js -o $(OUT)/hexdrawer.js
 
 .PHONY: clean-npm
 clean-npm:
@@ -45,3 +45,12 @@ clean-npm:
 .PHONY: clean
 clean:
 	rm -rf $(OUT)	
+
+.PHONY: pages
+pages: $(OUT)/demo
+	cd $(OUT) && \
+	git init . && \
+	git add . && \
+	git commit -m "Update pages"; \
+	git push "git@github.com:freiksenet/hexdrawer.git" master:gh-pages --force && \
+	rm -rf .git
