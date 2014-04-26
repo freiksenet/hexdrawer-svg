@@ -6,7 +6,7 @@ deps_installed := $(deps)/installed
 browserify := $(deps)/browserify/bin/cmd.js
 watchify := $(deps)/watchify/bin/cmd.js
 simple_server := $(deps)/simple-server/bin/simple-server.js
-js_files :=  $(shell find lib/ -type f -name '*.js')
+js_files := $(shell find lib/ -type f -name '*.js')
 
 $(OUT):
 	mkdir $(OUT)
@@ -25,11 +25,14 @@ $(OUT)/react.js: $(deps_installed) $(OUT)
 $(OUT)/hexdrawer.js: hexdrawer.js $(js_files) $(deps_installed) $(OUT)
 	$(browserify) -r ./hexdrawer -x lodash -x react -t reactify -e hexdrawer.js -o $@
 
-$(OUT)/demo: $(OUT)/lodash.js $(OUT)/react.js $(OUT)/hexdrawer.js
+demofiles := $(wildcard demo/*)
+
+$(OUT)/demo/demo: $(OUT)/lodash.js $(OUT)/react.js $(OUT)/hexdrawer.js $(demofiles)
 	cp -r demo $(OUT)
+	touch $(OUT)/demo/demo
 
 .PHONY: demo
-demo: $(OUT)/demo
+demo: $(OUT)/demo/demo
 	cd $(OUT); ../$(simple_server) 8000
 
 dist: $(OUT)/hexdrawer.js

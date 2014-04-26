@@ -4,11 +4,22 @@
       svg {
         width: 800px;
         height: 800px;
+        position: relative;
       }
       .hexdrawer-Hex {
         fill: white;
+      }
+      line {
+        stroke-width: 1px;
         stroke: black;
-        stroke-width: 2px;
+      }
+
+      line.hovered {
+        stroke: red;
+      }
+
+      line.active {
+        stroke: green;
       }
     </style>
   </head>
@@ -16,63 +27,19 @@
     <h1>
       Hex demos
     </h1>
-    <div id="svg">
-    </div>
+    <svg id="svg">
+    </svg>
     <script src="../lodash.js"></script>
     <script src="../react.js"></script>
     <script src="../hexdrawer.js"></script>
+    <script src="demo.js"></script>
     <script>
       var React = require('react');
-      var hexdrawer = require('./hexdrawer');
-
       var element = document.getElementById('svg');
-
-      React.renderComponent(
-        React.DOM.svg(null,
-          hexdrawer.HexGrid({
-            x: 40,
-            y: 20,
-            height: 5,
-            width: 5,
-            hexWidth: 40,
-            hexRotation: 0
-          }),
-          hexdrawer.HexGrid({
-            x: 400,
-            y: 50,
-            height: 5,
-            width: 5,
-            hexWidth: 40,
-            hexRatio: 0.7,
-            hexRotation: Math.PI / 8
-          }),
-          hexdrawer.HexGrid({
-            x: 40,
-            y: 300,
-            height: 5,
-            width: 5,
-            hexWidth: 40,
-            hexRotation: - Math.PI / 32
-          }),
-          hexdrawer.HexGrid({
-            x: 400,
-            y: 300,
-            height: 5,
-            width: 5,
-            radius: 20,
-            hexWidth: 40,
-            hexRotation: Math.PI / 6
-          }),
-          hexdrawer.HexGrid({
-            x: 600,
-            y: 20,
-            height: 5,
-            width: 5,
-            hexWidth: 40,
-            hexRatio: 0.5,
-            hexRotation: 0
-          })
-        ), element);
+      React.renderComponent(DemoComp({
+        height: 5,
+        width: 5
+      }), element);
     </script>
   </body>
 </html>
