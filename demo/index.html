@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style>
+      svg {
+        width: 800px;
+        height: 800px;
+        position: relative;
+      }
+      .hexdrawer-HexGrid-Hex {
+        fill: white;
+      }
+      .hexdrawer-HexGrid-Border {
+        stroke-width: 1px;
+        stroke: black;
+        stroke-linecap: round;
+      }
+
+      .hexdrawer-HexGrid-Border.hovered {
+        stroke: red;
+      }
+
+      .hexdrawer-HexGrid-Border.active {
+        stroke: green;
+      }
+      .hexdrawer-HexGrid-Border.active.hovered {
+        stroke: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Hex demos
+    </h1>
+    <svg id="svg">
+    </svg>
+    <script src="../lodash.js"></script>
+    <script src="../react.js"></script>
+    <script src="../hexdrawer.js"></script>
+    <script src="demo.js"></script>
+    <script>
+      var React = require('react');
+      var element = document.getElementById('svg');
+      React.renderComponent(DemoComp({
+        height: 5,
+        width: 5
+      }), element);
+    </script>
+  </body>
+</html>
