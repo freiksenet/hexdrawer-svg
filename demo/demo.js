@@ -41,13 +41,16 @@ var DemoComp = React.createClass({
 
   hexMouseOver: function (x, y) {
     var hexes = this.state.hexes;
-    hexes[x][y].borderClass.hovered = true;
+    var borderClass = hexes[x][y].borderClass || {};
+    borderClass.hovered = true;
+    hexes[x][y].borderClass = borderClass;
     this.setState({hexes: hexes});
   },
 
   hexMouseOut: function (x, y) {
     var hexes = this.state.hexes;
-    hexes[x][y].borderClass = _.omit(hexes[x][y].borderClass, 'hovered');
+    var borderClass = hexes[x][y].borderClass || {};
+    hexes[x][y].borderClass = _.omit(borderClass, 'hovered');
     this.setState({hexes: hexes});
   },
 
