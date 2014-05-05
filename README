@@ -1,6 +1,4 @@
-Library for drawing hex and square grids with SVG. Uses React, exposses both
-React components and React-free API.
-
+Experiment with rendering SVG with React for hex grid purposes. Verdict - SVG kinda sucks with raster images.
 Demo:
 http://freiksenet.github.io/hexdrawer/demo
 
