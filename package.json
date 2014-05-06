@@ -1,8 +1,8 @@
 {
-  "name": "hexdrawer",
+  "name": "hexdrawer-svg",
   "version": "0.0.1",
   "author": "Mikhail <freiksenet@gmail.com> Novikov",
-  "description": "renderer for hex or square tiles based on React",
+  "description": "svg renderer for hex tiles based on React",
   "repository": {
     "type": "git",
     "url": "https://github.com/freiksenet/hexdrawer.git"
