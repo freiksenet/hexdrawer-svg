@@ -1,5 +1,5 @@
 Experiment with rendering SVG with React for hex grid purposes. Verdict - SVG kinda sucks with raster images.
 Demo:
-http://freiksenet.github.io/hexdrawer/demo
+http://freiksenet.github.io/hexdrawer-svg/demo
 
 make demo, go to localhost:8000/demo/index.html
